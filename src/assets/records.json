@@ -1,0 +1,28 @@
+{
+  "colleagues": [
+    {
+      "id": "1",
+      "colleaguName": "Justin",
+      "cubicleNum": "101",
+      "devCentre": "CN_BEIJ"
+    },
+    {
+      "id": "2",
+      "colleaguName": "Sylvia",
+      "cubicleNum": "102",
+      "devCentre": "CAN_SASK"
+    },
+    {
+      "id": "3",
+      "colleaguName": "Dexter",
+      "cubicleNum": "103",
+      "devCentre": "ARG_RP"
+    },
+    {
+      "id": 2.816317371951226,
+      "colleaguName": "Beth",
+      "cubicleNum": "104",
+      "devCentre": "CAN_QK"
+    }
+  ]
+}

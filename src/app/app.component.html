@@ -1,0 +1,51 @@
+<strong *ngIf="msg !== null && msg !== undefined">
+  <div>
+    Resource Updated Successfully with DevCentre Id {{ msg.devCentre }}
+  </div>
+</strong>
+<div class="container">
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Colleague Name</th>
+        <th>Cubicle Num</th>
+        <th>Development Center Id</th>
+        <th>Remove Candidate</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="allData | async as colleagueArr">
+      <!-- <td>{{ colleagueArr | json }}</td> -->
+      <tr *ngFor="let emp of colleagueArr">
+        <td>{{ emp.colleaguName }}</td>
+        <td>{{ emp.cubicleNum }}</td>
+        <td contenteditable (blur)="updateColleague($event, emp.id)">{{ emp.devCentre }}</td>
+        <td>
+          <button (click)="delColleague(emp.id)">Yes</button>
+        </td>
+      </tr>
+      <!-- <tr>
+        <td>{{ response[1].colleaguName }}</td>
+        <td>{{ response[1].cubicleNum }}</td>
+        <td contenteditable (blur)="updateColleague($event, response[1].id)">{{ response[1].devCentre }}</td>
+        <td>
+          <button (click)="delColleague()">Yes</button>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ response[2].colleaguName }}</td>
+        <td>{{ response[2].cubicleNum }}</td>
+        <td contenteditable (blur)="updateColleague($event, response[2].id)">{{ response[2].devCentre }}</td>
+        <td>
+          <button (click)="delColleague()">Yes</button>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
+    &nbsp;&nbsp;
+    <div class="input-group">
+      <input #colleague type="text" class="form-control" placeholder="Colleague Name" aria-label="Colleague Name" required>
+      <input #cubicleNum type="text" class="form-control" placeholder="Cubicle Number" aria-label="Cubicle Number" required>
+      <input #devcentre type="text" class="form-control" placeholder="DevCentre Id" aria-label="DevCentre Id" required>
+      <button type="button" class="btn btn-primary btn-lg" (click)="createColleague()">Create New User</button>
+    </div>
+</div>
